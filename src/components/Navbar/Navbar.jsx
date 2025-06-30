@@ -64,7 +64,7 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden bg-white/95 backdrop-blur-md rounded-lg shadow-lg mb-4">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {["home", "skills", "projects", "contact"].map((item) => (
+              {["about", "skills", "projects", "contact"].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
