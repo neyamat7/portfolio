@@ -211,7 +211,7 @@ const HeroSection = () => {
                 >
                   <div className="w-full h-full rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-gray-700 to-gray-800">
                     <img
-                      src="/public/profile.JPG"
+                      src="/profile.JPG"
                       alt="Neyamat Ullah - Front-End Developer"
                       className="w-full h-full object-cover"
                     />
