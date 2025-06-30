@@ -112,9 +112,9 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
             >
               <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                Specializing in React, modern JavaScript, and responsive
-                design—I transform creative concepts into polished,
-                user-friendly web applications that bring ideas to life.
+                Specializing in React, modern JavaScript, and responsive design—
+                I transform creative concepts into polished, user-friendly web
+                applications that bring ideas to life.
               </p>
             </motion.div>
 
