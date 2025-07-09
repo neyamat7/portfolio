@@ -38,7 +38,7 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Task Tempo",
+    title: "Task Harbour",
     description:
       "Task Tempo is a dynamic task management solution tailored for freelancers and clients, enabling efficient task posting, discovery, and handling. With robust authentication, complete CRUD functionality, and an intuitive design, it streamlines task collaboration.",
     image: "https://i.postimg.cc/ZK6dNjsJ/Screenshot-2025-06-29-133738.png",
