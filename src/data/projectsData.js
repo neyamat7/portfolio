@@ -44,7 +44,7 @@ export const projects = [
     image: "https://i.postimg.cc/ZK6dNjsJ/Screenshot-2025-06-29-133738.png",
     technologies: ["React", "Tailwind", "Firebase", "NodeJs", "MongoDB"],
     category: "web-app",
-    github: "https://github.com/neyamat7/task-tempo",
+    github: "https://github.com/neyamat7/task-harbour",
     live: "https://task-tempo.netlify.app/",
     year: "2025",
     team: "Solo Project",
