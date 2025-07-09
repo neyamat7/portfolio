@@ -7,6 +7,7 @@ import {
   SiMongodb,
   SiReact,
   SiReactquery,
+  SiRedux,
   SiTailwindcss,
 } from "react-icons/si";
 
@@ -42,6 +43,13 @@ const Skills = () => {
           icon: SiReactquery,
           color: "text-pink-500",
           level: 80,
+          experience: "",
+        },
+        {
+          name: "Redux Toolkit",
+          icon: SiRedux,
+          color: "text-white",
+          level: 50,
           experience: "",
         },
       ],

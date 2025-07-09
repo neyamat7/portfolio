@@ -100,14 +100,16 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
             >
-              <motion.button
+              <motion.a
                 className="group bg-gradient-to-r from-purple-500 to-blue-500 text-white px-8 py-4 rounded-2xl font-semibold hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 flex items-center justify-center"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
+                href="/Neyamat-Ullah-resume.pdf"
+                download
               >
                 <FiDownload className="mr-2" />
                 Get Resume
-              </motion.button>
+              </motion.a>
 
               {/* <motion.button
                 className="border-2 border-gray-600 text-gray-200 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-800 hover:border-gray-500 transition-all duration-300 flex items-center justify-center"
