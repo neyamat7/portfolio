@@ -1,6 +1,39 @@
 export const projects = [
   {
     id: 1,
+    title: "Worklix",
+    description:
+      "Worklix connects businesses with skilled workers through a streamlined three-tier system: buyers post tasks and pay securely using Stripe, while workers browse and complete tasks for earnings. The platform offers real-time notifications via Socket.io, instant updates, strong admin controls, and a responsive—all to simplify micro-task management and help both users and workers operate efficiently.",
+    image: "https://i.postimg.cc/43BKz29J/Screenshot-2025-07-17-180054.png",
+    technologies: ["React", "Redux Toolkit", "Socket.io", "NodeJs", "MongoDB"],
+    category: "web-app",
+    github: "https://github.com/neyamat7/worklix",
+    live: "https://worklix.netlify.app/",
+    year: "2025",
+    team: "Solo Project",
+    status: "Completed",
+    features: [
+      "Three-tier user system with distinct dashboards for admins, buyers, and workers.",
+      "Seamless Stripe integration for secure in-app coin purchases and easy withdrawals.",
+      "Real-time notifications and updates powered by Socket.io for instant task progress tracking.",
+      "Responsive, modern UI with theme switching, smooth animations, and intuitive navigation.",
+    ],
+    challenges: [
+      "Ensuring smooth, real-time synchronization of task and payment statuses across all user roles.",
+      "Balancing user experience with robust security, especially during payments and data access.",
+      "Managing diverse user permissions and maintaining clear, role-based interfaces.",
+      "Providing reliable support for high transaction volumes while maintaining platform stability.",
+    ],
+    improvements: [
+      "Introduce a task recommendation system based on worker skills and buyer history.",
+      "Add multi-language support and accessibility features to broaden the user base.",
+      "Enable users to share completed tasks or achievements on social media directly.",
+      "Expand analytics for buyers and workers to track earnings, task trends, and platform growth.",
+    ],
+  },
+
+  {
+    id: 2,
     title: "Artifact Vault",
     description:
       "ArtifactVault is a modern web application that brings history to life by allowing users to explore, contribute, and interact with historical artifacts from around the world. Whether you're a history enthusiast, researcher, or casual learner, this platform provides an engaging way to discover and share historical treasures.",
@@ -37,7 +70,7 @@ export const projects = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "Task Harbour",
     description:
       "Task Tempo is a dynamic task management solution tailored for freelancers and clients, enabling efficient task posting, discovery, and handling. With robust authentication, complete CRUD functionality, and an intuitive design, it streamlines task collaboration.",
@@ -70,35 +103,35 @@ export const projects = [
       "Enhancing notification system with email or SMS alerts",
     ],
   },
-  {
-    id: 3,
-    title: "Bill-Voyage",
-    description:
-      "A smart and secure bill management platform where users can track expenses and income, manage cards, transfer money, monitor finances in real time. Includes mobile app access and supports seamless, making it easy to stay on top of your finances anytime, anywhere, and stay organized -helping you never miss a payment again.",
-    image:
-      "https://i.postimg.cc/zDstwz5K/68747470733a2f2f692e706f7374696d672e63632f58596336506e324b2f53637265656e73686f742d323032352d30352d30.png",
-    technologies: ["React", "Tailwind", "Firebase", "NodeJs", "MongoDB"],
-    category: "web-app",
-    github: "https://github.com/neyamat7/bill-voyage",
-    live: "https://bill-voyage.netlify.app/",
-    year: "2023",
-    team: "Solo Project",
-    status: "Completed",
-    features: [
-      "Easy online payment of utility bills (electricity, water, gas, internet)",
-      "Real-time tracking and monitoring of expenses and income",
-      "Comprehensive financial management and categorization tools",
-      "Secure payment processing with robust encryption",
-      "Seamless access across web and mobile platforms",
-    ],
-    challenges: [
-      "Ensuring accurate and reliable real-time updates for bill tracking",
-      "Creating a seamless user experience across different device platforms",
-    ],
-    improvements: [
-      "Advanced financial analytics and reporting dashboards",
-      "AI-based recommendations for budgeting and expense management",
-      "Support for additional payment methods, including digital wallets and cryptocurrencies",
-    ],
-  },
+  // {
+  //   id: 3,
+  //   title: "Bill-Voyage",
+  //   description:
+  //     "A smart and secure bill management platform where users can track expenses and income, manage cards, transfer money, monitor finances in real time. Includes mobile app access and supports seamless, making it easy to stay on top of your finances anytime, anywhere, and stay organized -helping you never miss a payment again.",
+  //   image:
+  //     "https://i.postimg.cc/zDstwz5K/68747470733a2f2f692e706f7374696d672e63632f58596336506e324b2f53637265656e73686f742d323032352d30352d30.png",
+  //   technologies: ["React", "Tailwind", "Firebase", "NodeJs", "MongoDB"],
+  //   category: "web-app",
+  //   github: "https://github.com/neyamat7/bill-voyage",
+  //   live: "https://bill-voyage.netlify.app/",
+  //   year: "2023",
+  //   team: "Solo Project",
+  //   status: "Completed",
+  //   features: [
+  //     "Easy online payment of utility bills (electricity, water, gas, internet)",
+  //     "Real-time tracking and monitoring of expenses and income",
+  //     "Comprehensive financial management and categorization tools",
+  //     "Secure payment processing with robust encryption",
+  //     "Seamless access across web and mobile platforms",
+  //   ],
+  //   challenges: [
+  //     "Ensuring accurate and reliable real-time updates for bill tracking",
+  //     "Creating a seamless user experience across different device platforms",
+  //   ],
+  //   improvements: [
+  //     "Advanced financial analytics and reporting dashboards",
+  //     "AI-based recommendations for budgeting and expense management",
+  //     "Support for additional payment methods, including digital wallets and cryptocurrencies",
+  //   ],
+  // },
 ];
