@@ -6,8 +6,8 @@ export default function DraggableInterests({ interests }) {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <div className="space-y-8">
-      <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+    <div className="">
+      <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-4 border border-white/10">
         <h3 className="text-2xl font-bold text-white mb-4">Beyond Coding</h3>
 
         <div className="flex flex-wrap gap-4 justify-center items-center h-auto min-h-[110px]">
