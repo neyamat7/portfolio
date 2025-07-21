@@ -1,11 +1,24 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { FiDownload, FiGithub, FiLinkedin } from "react-icons/fi";
 
 const HeroSection = () => {
+  const ref = useRef(null);
+  const { scrollY } = useScroll();
+  const shrinkScroll = 100;
+  const fadeStart = window.innerHeight - 80;
+  const fadeEnd = window.innerHeight + 80;
+
+  const scale = useTransform(scrollY, [0, shrinkScroll], [1, 0.96]);
+  // const opacity = useTransform(scrollY, [fadeStart, fadeEnd], [1, 0]);
+
   return (
-    <section
+    <motion.section
+      style={{ scale, transformOrigin: "top center" }}
+      ref={ref}
       id="home"
-      className=" lg:pt-10 min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-black relative overflow-hidden"
+      // className=" lg:pt-10 min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-black relative overflow-hidden"
+      className="sticky top-[-50vh] min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-black overflow-hidden z-10"
     >
       {/* Geometric Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -211,7 +224,7 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

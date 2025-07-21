@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useRef } from "react";
 import {
   FiArrowLeft,
   FiCode,
@@ -9,11 +10,22 @@ import {
   FiTrendingUp,
 } from "react-icons/fi";
 
-const ProjectDetails = ({ project, onClose }) => {
+const ProjectDetails = ({ project, onClose,   }) => {
+  const modalRef = useRef();
   if (!project) return null;
+
+  const handleBackdropClick = (e) => {
+    // Close only if click target is the backdrop (not modal content)
+    if (e.target !== modalRef.current) {
+   
+      onClose();
+    }
+  };
 
   return (
     <motion.div
+      ref={modalRef}
+      onClick={handleBackdropClick}
       className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 overflow-y-auto"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -205,6 +217,7 @@ const ProjectDetails = ({ project, onClose }) => {
               >
                 <motion.a
                   href={project?.live}
+                  target="_blank"
                   className="flex-1 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-2xl font-semibold text-center hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 flex items-center justify-center gap-2"
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
@@ -214,6 +227,7 @@ const ProjectDetails = ({ project, onClose }) => {
                 </motion.a>
                 <motion.a
                   href={project?.github}
+                  target="_blank"
                   className="flex-1 border-2 border-white/20 text-white px-6 py-3 rounded-2xl font-semibold text-center hover:bg-white/10 hover:border-white/40 transition-all duration-300 flex items-center justify-center gap-2"
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}

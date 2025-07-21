@@ -1,8 +1,12 @@
+import * as Tooltip from "@radix-ui/react-tooltip";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { FiCode, FiHeart, FiTarget, FiTrendingUp } from "react-icons/fi";
 import { HiOutlineSparkles } from "react-icons/hi";
+import DraggableInterests from "./Interests";
 
 const AboutMe = () => {
+  const [openIndex, setOpenIndex] = useState(null);
   const interests = [
     {
       title: "Football",
@@ -25,13 +29,13 @@ const AboutMe = () => {
       icon: "✈️",
       color: "from-blue-400 to-cyan-500",
     },
-    {
-      title: "Photography",
-      description:
-        "Love capturing moments and beautiful landscapes. It helps me see the world differently and appreciate details.",
-      icon: "📸",
-      color: "from-yellow-400 to-orange-500",
-    },
+    // {
+    //   title: "Photography",
+    //   description:
+    //     "Love capturing moments and beautiful landscapes. It helps me see the world differently and appreciate details.",
+    //   icon: "📸",
+    //   color: "from-yellow-400 to-orange-500",
+    // },
   ];
 
   const values = [
@@ -64,7 +68,8 @@ const AboutMe = () => {
   return (
     <section
       id="about"
-      className="py-20 bg-gradient-to-br from-slate-900 via-gray-900 to-black scroll-mt-8"
+      // className="py-20 bg-gradient-to-br from-slate-900 via-gray-900 to-black scroll-mt-8 z-50"
+      className="relative z-20 py-20 bg-gradient-to-br from-slate-900 via-gray-900 to-black scroll-mt-8"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -85,7 +90,7 @@ const AboutMe = () => {
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 gap-12 ">
-          {/* Left Side - Personal Story */}
+          {/*  Personal Story */}
           <motion.div
             className="space-y-8 lg:space-y-0 flex flex-col items-center lg:items-stretch lg:flex-row gap-4"
             initial={{ opacity: 0, x: -30 }}
@@ -124,12 +129,13 @@ const AboutMe = () => {
               </div>
             </div>
 
-            {/* Values */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 lg:flex-1">
-              <h3 className="text-2xl font-bold text-white mb-6">
-                What I Value
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* Values and interests */}
+            <div className="flex flex-col gap-4">
+              <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 lg:flex-1">
+                <h3 className="text-2xl font-bold text-white mb-6">
+                  What I Value
+                </h3>
+                {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {values.map((value, index) => (
                   <motion.div
                     key={value.title}
@@ -147,50 +153,60 @@ const AboutMe = () => {
                     <p className="text-gray-400 text-sm">{value.description}</p>
                   </motion.div>
                 ))}
-              </div>
-            </div>
-          </motion.div>
+              </div> */}
 
-          {/* Right Side - Journey & Interests */}
-          <motion.div
-            className="space-y-8"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            {/* Interests & Hobbies */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-6">
-                Beyond Coding
-              </h3>
-              <p className="text-gray-300 mb-6">
-                When I'm not coding, you'll find me pursuing various interests
-                that keep me balanced and inspired:
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                {interests.map((interest, index) => (
-                  <motion.div
-                    key={interest.title}
-                    className={`bg-gradient-to-br ${interest.color} p-0.5 rounded-2xl`}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    <div className="bg-gray-900 rounded-2xl p-4 h-full">
-                      <div className="text-2xl mb-2">{interest.icon}</div>
-                      <h4 className="text-white font-semibold mb-2">
-                        {interest.title}
-                      </h4>
-                      <p className="text-gray-300 text-sm">
-                        {interest.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {values.map((value, index) => (
+                    <Tooltip.Provider key={value.title}>
+                      <Tooltip.Root
+                        open={openIndex === index}
+                        onOpenChange={(isOpen) =>
+                          setOpenIndex(isOpen ? index : null)
+                        }
+                        delayDuration={50}
+                      >
+                        <Tooltip.Trigger asChild>
+                          <motion.div
+                            className="relative bg-white/5 rounded-2xl p-4 border border-white/10 hover:border-white/20 transition-all duration-300"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: index * 0.1 }}
+                            viewport={{ once: true }}
+                            whileHover={{ scale: 1.02 }}
+                          >
+                            <div className="flex gap-5">
+                              <value.icon className="text-2xl text-purple-400 mb-2" />
+                              <h4 className="text-white font-semibold">
+                                {value.title}
+                              </h4>
+                            </div>
+                          </motion.div>
+                        </Tooltip.Trigger>
+
+                        <Tooltip.Portal>
+                          <Tooltip.Content
+                            side="top"
+                            align="center"
+                            onPointerEnter={() => setOpenIndex(null)}
+                            className="z-[9999] w-96 max-w-[95vw] rounded-2xl bg-white/20 backdrop-blur-2xl text-white text-sm px-6 py-5 shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/20 animate-fadeInFloat"
+                            sideOffset={20}
+                          >
+                            <div className="text-lg font-semibold mb-2 text-white">
+                              {value.title}
+                            </div>
+                            <div className="leading-relaxed text-base text-white/90">
+                              {value.description}
+                            </div>
+                            <Tooltip.Arrow className="fill-white/20" />
+                          </Tooltip.Content>
+                        </Tooltip.Portal>
+                      </Tooltip.Root>
+                    </Tooltip.Provider>
+                  ))}
+                </div>
               </div>
+
+              <DraggableInterests interests={interests} />
             </div>
           </motion.div>
         </div>
