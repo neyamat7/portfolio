@@ -10,14 +10,13 @@ import {
   FiTrendingUp,
 } from "react-icons/fi";
 
-const ProjectDetails = ({ project, onClose,   }) => {
+const ProjectDetails = ({ project, onClose }) => {
   const modalRef = useRef();
   if (!project) return null;
 
   const handleBackdropClick = (e) => {
     // Close only if click target is the backdrop (not modal content)
     if (e.target !== modalRef.current) {
-   
       onClose();
     }
   };
@@ -41,7 +40,7 @@ const ProjectDetails = ({ project, onClose,   }) => {
             exit={{ opacity: 0, y: 50, scale: 0.95 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
-            {/* Header */}
+            {/* project header */}
             <div className="relative">
               <img
                 src={project.image || "/placeholder.svg"}
