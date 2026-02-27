@@ -34,7 +34,7 @@ const HeroSection = () => {
         ></motion.div>
 
         {/* Lines */}
-        <div className="absolute top-1/2 left-0 w-32 h-0.5 bg-gradient-to-r from-transparent to-purple-400/50 transform rotate-45"></div>
+        {/* <div className="absolute top-1/2 left-0 w-32 h-0.5 bg-gradient-to-r from-transparent to-purple-400/50 transform rotate-45"></div> */}
         <div className="absolute bottom-1/4 right-1/4 w-24 h-0.5 bg-gradient-to-r from-blue-400/50 to-transparent transform -rotate-12"></div>
       </div>
 
@@ -87,7 +87,7 @@ const HeroSection = () => {
               <div className="flex items-center space-x-4 mb-6">
                 <div className="h-1 w-16 bg-gradient-to-r from-purple-500 to-blue-500"></div>
                 <h2 className="text-xl lg:text-2xl font-semibold text-gray-200 uppercase tracking-wider">
-                  Front-End Developer
+                  Full-Stack Developer
                 </h2>
               </div>
             </motion.div>
@@ -100,9 +100,7 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
             >
               <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                Specializing in React, modern JavaScript, and responsive design—
-                I transform creative concepts into polished, user-friendly web
-                applications that bring ideas to life.
+                From concept to deployment, I build clean, scalable, and maintainable web applications that help businesses grow using modern technologies like React, Next.js, NestJS, and PostgreSQL.
               </p>
             </motion.div>
 

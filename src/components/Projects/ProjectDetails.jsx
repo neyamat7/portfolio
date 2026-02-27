@@ -5,6 +5,7 @@ import {
   FiCode,
   FiExternalLink,
   FiGithub,
+  FiLock,
   FiTarget,
   FiTool,
   FiTrendingUp,
@@ -104,6 +105,38 @@ const ProjectDetails = ({ project, onClose }) => {
                   {project?.description}
                 </p>
               </motion.div>
+
+              {/* Admin Access Credentials */}
+              {project?.adminAccess && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.15 }}
+                >
+                  <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
+                    <FiLock className="mr-3 text-cyan-400" />
+                    Admin Demo Access
+                  </h2>
+                  <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center gap-6">
+                    <div className="flex-1">
+                      <p className="text-xs text-cyan-400 uppercase tracking-wider font-bold mb-1">
+                        Username
+                      </p>
+                      <code className="text-xl font-mono text-white bg-white/5 px-3 py-1 rounded-lg border border-white/10 block sm:inline-block w-full sm:w-auto">
+                        {project.adminAccess.username}
+                      </code>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-xs text-cyan-400 uppercase tracking-wider font-bold mb-1">
+                        Password
+                      </p>
+                      <code className="text-xl font-mono text-white bg-white/5 px-3 py-1 rounded-lg border border-white/10 block sm:inline-block w-full sm:w-auto">
+                        {project.adminAccess.password}
+                      </code>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
 
               {/* Technology Stack */}
               <motion.div

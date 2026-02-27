@@ -108,7 +108,7 @@ const AboutMe = () => {
 
               <div className="space-y-6 text-gray-300 leading-relaxed">
                 <p>
-                  Hello! I'm Neyamat, a Front-end developer who treats every bug
+                  Hello! I'm Neyamat, a Full-Stack developer who treats every bug
                   like a mystery and every feature like a creative challenge. My
                   journey started in 2024 when I got frustrated with a clunky
                   app and thought, 'I could build something better.'
