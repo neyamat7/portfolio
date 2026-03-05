@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
 import { FaNodeJs } from "react-icons/fa";
 import {
-  SiExpress,
   SiJavascript,
-  SiJsonwebtokens,
   SiMongodb,
   SiMongoose,
   SiNestjs,
@@ -13,6 +11,7 @@ import {
   SiReact,
   SiReactquery,
   SiTailwindcss,
+  SiTypescript,
 } from "react-icons/si";
 
 const Skills = () => {
@@ -24,21 +23,28 @@ const Skills = () => {
           name: "React",
           icon: SiReact,
           color: "text-blue-400",
-          level: 90,
+          level: 80,
           experience: "",
         },
         {
           name: "Next.js",
           icon: SiNextdotjs,
           color: "text-white",
-          level: 85,
+          level: 70,
           experience: "",
         },
         {
           name: "JavaScript",
           icon: SiJavascript,
           color: "text-yellow-400",
-          level: 85,
+          level: 70,
+          experience: "",
+        },
+        {
+          name: "TypeScript",
+          icon: SiTypescript,
+          color: "text-blue-500",
+          level: 60,
           experience: "",
         },
 
@@ -46,14 +52,14 @@ const Skills = () => {
           name: "Tailwind CSS",
           icon: SiTailwindcss,
           color: "text-cyan-400",
-          level: 95,
+          level: 90,
           experience: "",
         },
         {
           name: "TanStack Query",
           icon: SiReactquery,
           color: "text-pink-500",
-          level: 80,
+          level: 70,
           experience: "",
         },
       ],
@@ -184,7 +190,7 @@ const Skills = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {skillCategories.map((category, categoryIndex) => (
+          {skillCategories.map((category) => (
             <motion.div
               key={category.title}
               variants={categoryVariants}
