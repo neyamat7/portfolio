@@ -100,7 +100,9 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
             >
               <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                From concept to deployment, I build clean, scalable, and maintainable web applications that help businesses grow using modern technologies like React, Next.js, NestJS, and PostgreSQL.
+                From concept to deployment, I build clean, scalable, and
+                maintainable web applications that help businesses grow using
+                modern technologies like React, Next.js, NestJS, and PostgreSQL.
               </p>
             </motion.div>
 
@@ -115,7 +117,7 @@ const HeroSection = () => {
                 className="group bg-gradient-to-r from-purple-500 to-blue-500 text-white px-8 py-4 rounded-2xl font-semibold hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 flex items-center justify-center"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                href="/Neyamat-Ullah-resume.pdf"
+                href="/Resume_of_Md_Neyamat_Ullah.pdf"
                 download
               >
                 <FiDownload className="mr-2" />
