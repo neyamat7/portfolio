@@ -29,7 +29,7 @@ const HeroSection = () => {
         ></motion.div>
 
         {/* Lines */}
-        <div className="absolute bottom-1/4 right-1/4 w-24 h-0.5 bg-gradient-to-r from-blue-400/50 to-transparent transform -rotate-12"></div>
+        {/* <div className="absolute bottom-1/4 right-1/4 w-24 h-0.5 bg-gradient-to-r from-blue-400/50 to-transparent transform -rotate-12"></div> */}
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
