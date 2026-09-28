@@ -98,7 +98,7 @@ const AboutMe = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 lg:basis-[50%]">
+            <div className="bg-white/5 backdrop-blur-sm rounded-[4px] p-8 border border-white/10 lg:basis-[50%]">
               <div className="flex items-center mb-6">
                 <HiOutlineSparkles className="text-3xl text-purple-400 mr-4" />
                 <h3 className="text-2xl font-bold text-white">
@@ -131,29 +131,10 @@ const AboutMe = () => {
 
             {/* Values and interests */}
             <div className="flex flex-col gap-4">
-              <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 lg:flex-1">
+              <div className="bg-white/5 backdrop-blur-sm rounded-[4px] p-8 border border-white/10 lg:flex-1">
                 <h3 className="text-2xl font-bold text-white mb-6">
                   What I Value
                 </h3>
-                {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {values.map((value, index) => (
-                  <motion.div
-                    key={value.title}
-                    className="bg-white/5 rounded-2xl p-4 border border-white/10 hover:border-white/20 transition-all duration-300"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    <value.icon className="text-2xl text-purple-400 mb-2" />
-                    <h4 className="text-white font-semibold mb-1">
-                      {value.title}
-                    </h4>
-                    <p className="text-gray-400 text-sm">{value.description}</p>
-                  </motion.div>
-                ))}
-              </div> */}
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {values.map((value, index) => (
@@ -167,7 +148,7 @@ const AboutMe = () => {
                       >
                         <Tooltip.Trigger asChild>
                           <motion.div
-                            className="relative bg-white/5 rounded-2xl p-4 border border-white/10 hover:border-white/20 transition-all duration-300"
+                            className="relative bg-white/5 rounded-[4px] p-4 border border-white/10 hover:border-white/20 transition-all duration-300"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -188,7 +169,7 @@ const AboutMe = () => {
                             side="top"
                             align="center"
                             onPointerEnter={() => setOpenIndex(null)}
-                            className="z-[9999] w-96 max-w-[95vw] rounded-2xl bg-white/20 backdrop-blur-2xl text-white text-sm px-6 py-5 shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/20 animate-fadeInFloat"
+                            className="z-[9999] w-96 max-w-[95vw] rounded-[4px] bg-white/20 backdrop-blur-2xl text-white text-sm px-6 py-5 shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/20 animate-fadeInFloat"
                             sideOffset={20}
                           >
                             <div className="text-lg font-semibold mb-2 text-white">

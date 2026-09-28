@@ -35,13 +35,13 @@ const ProjectDetails = ({ project, onClose }) => {
       <div className="min-h-screen py-8 px-4">
         <div className="max-w-4xl mx-auto">
           <motion.div
-            className="bg-gradient-to-br from-gray-900 to-slate-900 rounded-3xl overflow-hidden border border-white/10"
+            className="bg-gradient-to-br from-gray-900 to-slate-900 rounded-[4px] overflow-hidden border border-white/10"
             initial={{ opacity: 0, y: 50, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 50, scale: 0.95 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
-            {/* project header */}
+            {/* Project Header */}
             <div className="relative">
               <img
                 src={project.image || "/placeholder.svg"}
@@ -52,11 +52,12 @@ const ProjectDetails = ({ project, onClose }) => {
 
               <motion.button
                 onClick={onClose}
-                className="absolute top-6 left-6 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors duration-200"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                aria-label="Close modal"
+                className="absolute top-6 left-6 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-[4px] flex items-center justify-center text-white hover:bg-white/20 transition-colors duration-200"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <FiArrowLeft size={20} />
+                <FiArrowLeft size={18} />
               </motion.button>
 
               <div className="absolute bottom-6 left-6 right-6">
@@ -64,26 +65,36 @@ const ProjectDetails = ({ project, onClose }) => {
                   {project.title}
                 </h1>
                 <div className="flex items-center space-x-4">
-                  <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm">
-                    {project.category.replace("-", " ")}
+                  <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-[4px] text-white text-xs font-semibold uppercase tracking-wider">
+                    {project.categoryLabel || project.category.replace("-", " ")}
                   </span>
                   <div className="flex space-x-2">
-                    <motion.a
-                      href={project.github}
-                      className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <FiGithub size={18} />
-                    </motion.a>
-                    <motion.a
-                      href={project.live}
-                      className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-200"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <FiExternalLink size={18} />
-                    </motion.a>
+                    {project.github && (
+                      <motion.a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="GitHub Source"
+                        className="w-9 h-9 bg-white/20 backdrop-blur-sm rounded-[4px] flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <FiGithub size={16} />
+                      </motion.a>
+                    )}
+                    {project.live && (
+                      <motion.a
+                        href={project.live}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="Live Project"
+                        className="w-9 h-9 bg-gradient-to-r from-purple-500 to-blue-500 rounded-[4px] flex items-center justify-center text-white hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-200"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <FiExternalLink size={16} />
+                      </motion.a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -117,23 +128,30 @@ const ProjectDetails = ({ project, onClose }) => {
                     <FiLock className="mr-3 text-cyan-400" />
                     Admin Demo Access
                   </h2>
-                  <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center gap-6">
+                  <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-[4px] p-6 flex flex-col sm:flex-row sm:items-center gap-6">
                     <div className="flex-1">
                       <p className="text-xs text-cyan-400 uppercase tracking-wider font-bold mb-1">
-                        Username
+                        {project.adminAccess.email ? "Email / Username" : "Username"}
                       </p>
-                      <code className="text-xl font-mono text-white bg-white/5 px-3 py-1 rounded-lg border border-white/10 block sm:inline-block w-full sm:w-auto">
-                        {project.adminAccess.username}
+                      <code className="text-lg md:text-xl font-mono text-white bg-white/5 px-3 py-1.5 rounded-[4px] border border-white/10 block sm:inline-block w-full sm:w-auto">
+                        {project.adminAccess.email || project.adminAccess.username}
                       </code>
                     </div>
                     <div className="flex-1">
                       <p className="text-xs text-cyan-400 uppercase tracking-wider font-bold mb-1">
                         Password
                       </p>
-                      <code className="text-xl font-mono text-white bg-white/5 px-3 py-1 rounded-lg border border-white/10 block sm:inline-block w-full sm:w-auto">
+                      <code className="text-lg md:text-xl font-mono text-white bg-white/5 px-3 py-1.5 rounded-[4px] border border-white/10 block sm:inline-block w-full sm:w-auto">
                         {project.adminAccess.password}
                       </code>
                     </div>
+                    {project.adminAccess.role && (
+                      <div className="sm:self-end pb-1">
+                        <span className="px-3 py-1 bg-cyan-400/20 text-cyan-300 text-xs font-semibold rounded-[4px] border border-cyan-400/30">
+                          {project.adminAccess.role}
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               )}
@@ -152,13 +170,13 @@ const ProjectDetails = ({ project, onClose }) => {
                   {project?.technologies?.map((tech, index) => (
                     <motion.div
                       key={tech}
-                      className="bg-white/10 backdrop-blur-sm rounded-xl p-3 text-center border border-white/20"
+                      className="bg-white/10 backdrop-blur-sm rounded-[4px] p-3 text-center border border-white/20"
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.4, delay: 0.3 + index * 0.05 }}
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ scale: 1.02 }}
                     >
-                      <span className="text-white font-medium">{tech}</span>
+                      <span className="text-white font-medium text-sm">{tech}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -178,13 +196,13 @@ const ProjectDetails = ({ project, onClose }) => {
                   {project?.features?.map((feature, index) => (
                     <motion.div
                       key={feature}
-                      className="flex items-center space-x-3 bg-white/5 rounded-xl p-4 border border-white/10"
+                      className="flex items-center space-x-3 bg-white/5 rounded-[4px] p-4 border border-white/10"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: 0.4 + index * 0.05 }}
                     >
-                      <div className="w-2 h-2 bg-green-400 rounded-full" />
-                      <span className="text-gray-300">{feature}</span>
+                      <div className="w-2 h-2 bg-green-400 rounded-[2px] shrink-0" />
+                      <span className="text-gray-300 text-sm leading-relaxed">{feature}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -198,18 +216,18 @@ const ProjectDetails = ({ project, onClose }) => {
               >
                 <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
                   <FiTool className="mr-3 text-red-400" />
-                  Challenges Faced
+                  Challenges Faced & Solutions
                 </h2>
                 <div className="space-y-3">
                   {project?.challenges?.map((challenge, index) => (
                     <motion.div
                       key={challenge}
-                      className="bg-red-500/10 border border-red-500/20 rounded-xl p-4"
+                      className="bg-red-500/10 border border-red-500/20 rounded-[4px] p-4"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: 0.5 + index * 0.05 }}
                     >
-                      <p className="text-gray-300">{challenge}</p>
+                      <p className="text-gray-300 text-sm leading-relaxed">{challenge}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -229,12 +247,12 @@ const ProjectDetails = ({ project, onClose }) => {
                   {project?.improvements?.map((improvement, index) => (
                     <motion.div
                       key={improvement}
-                      className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-4"
+                      className="bg-yellow-500/10 border border-yellow-500/20 rounded-[4px] p-4"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: 0.6 + index * 0.05 }}
                     >
-                      <p className="text-gray-300">{improvement}</p>
+                      <p className="text-gray-300 text-sm leading-relaxed">{improvement}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -247,26 +265,32 @@ const ProjectDetails = ({ project, onClose }) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
               >
-                <motion.a
-                  href={project?.live}
-                  target="_blank"
-                  className="flex-1 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-2xl font-semibold text-center hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 flex items-center justify-center gap-2"
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <FiExternalLink size={18} />
-                  View Live Project
-                </motion.a>
-                <motion.a
-                  href={project?.github}
-                  target="_blank"
-                  className="flex-1 border-2 border-white/20 text-white px-6 py-3 rounded-2xl font-semibold text-center hover:bg-white/10 hover:border-white/40 transition-all duration-300 flex items-center justify-center gap-2"
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <FiGithub size={18} />
-                  View Source Code
-                </motion.a>
+                {project?.live && (
+                  <motion.a
+                    href={project.live}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3.5 rounded-[4px] font-semibold text-center hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 flex items-center justify-center gap-2"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <FiExternalLink size={18} />
+                    View Live Project
+                  </motion.a>
+                )}
+                {project?.github && (
+                  <motion.a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 border-2 border-white/20 text-white px-6 py-3.5 rounded-[4px] font-semibold text-center hover:bg-white/10 hover:border-white/40 transition-all duration-300 flex items-center justify-center gap-2"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <FiGithub size={18} />
+                    View Source Code
+                  </motion.a>
+                )}
               </motion.div>
             </div>
           </motion.div>

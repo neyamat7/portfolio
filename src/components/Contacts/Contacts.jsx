@@ -31,7 +31,7 @@ const Contacts = () => {
         publicKey: "Gv7FHhVdkO0_pEEXJ",
       })
       .then(
-        (res) => {
+        () => {
           toast.success("Thanks for contacting us.");
           setTimeout(() => setIsSubmitted(false), 3000);
         },
@@ -52,8 +52,8 @@ const Contacts = () => {
     {
       icon: FiPhone,
       title: "Phone",
-      value: "+88 01316350853",
-      href: "tel:+8801316350853",
+      value: "+8801834529197",
+      href: "tel:+8801834529197",
       description: "Give me a call",
     },
     {
@@ -88,7 +88,7 @@ const Contacts = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-          {/* Contact Form */}
+          {/* Contact Form Card */}
           <motion.div
             className="lg:col-span-3"
             initial={{ opacity: 0, x: -30 }}
@@ -96,9 +96,9 @@ const Contacts = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-[4px] p-8 border border-white/10">
               <h3 className="text-2xl font-bold text-white mb-8 flex items-center">
-                <span className="w-2 h-8 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full mr-4"></span>
+                <span className="w-2 h-8 bg-gradient-to-b from-purple-400 to-blue-400 rounded-[2px] mr-4"></span>
                 Send me a message
               </h3>
 
@@ -106,7 +106,7 @@ const Contacts = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <motion.div
                     className="relative"
-                    whileHover={{ scale: 1.02 }}
+                    whileHover={{ scale: 1.01 }}
                     transition={{ duration: 0.2 }}
                   >
                     <input
@@ -117,16 +117,16 @@ const Contacts = () => {
                       onChange={handleChange}
                       onFocus={() => setFocusedField("name")}
                       onBlur={() => setFocusedField(null)}
-                      className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:bg-white/15 transition-all duration-300"
+                      className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-[4px] text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:bg-white/15 transition-all duration-300"
                       placeholder="Your name"
                       required
                     />
                     <motion.div
-                      className="absolute inset-0 rounded-2xl border-2 border-purple-400 pointer-events-none"
-                      initial={{ opacity: 0, scale: 1.05 }}
+                      className="absolute inset-0 rounded-[4px] border-2 border-purple-400 pointer-events-none"
+                      initial={{ opacity: 0, scale: 1.02 }}
                       animate={{
                         opacity: focusedField === "name" ? 1 : 0,
-                        scale: focusedField === "name" ? 1 : 1.05,
+                        scale: focusedField === "name" ? 1 : 1.02,
                       }}
                       transition={{ duration: 0.2 }}
                     />
@@ -134,7 +134,7 @@ const Contacts = () => {
 
                   <motion.div
                     className="relative"
-                    whileHover={{ scale: 1.02 }}
+                    whileHover={{ scale: 1.01 }}
                     transition={{ duration: 0.2 }}
                   >
                     <input
@@ -145,16 +145,16 @@ const Contacts = () => {
                       onChange={handleChange}
                       onFocus={() => setFocusedField("email")}
                       onBlur={() => setFocusedField(null)}
-                      className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:bg-white/15 transition-all duration-300"
+                      className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-[4px] text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:bg-white/15 transition-all duration-300"
                       placeholder="your@email.com"
                       required
                     />
                     <motion.div
-                      className="absolute inset-0 rounded-2xl border-2 border-purple-400 pointer-events-none"
-                      initial={{ opacity: 0, scale: 1.05 }}
+                      className="absolute inset-0 rounded-[4px] border-2 border-purple-400 pointer-events-none"
+                      initial={{ opacity: 0, scale: 1.02 }}
                       animate={{
                         opacity: focusedField === "email" ? 1 : 0,
-                        scale: focusedField === "email" ? 1 : 1.05,
+                        scale: focusedField === "email" ? 1 : 1.02,
                       }}
                       transition={{ duration: 0.2 }}
                     />
@@ -163,7 +163,7 @@ const Contacts = () => {
 
                 <motion.div
                   className="relative"
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ scale: 1.01 }}
                   transition={{ duration: 0.2 }}
                 >
                   <input
@@ -174,16 +174,16 @@ const Contacts = () => {
                     onChange={handleChange}
                     onFocus={() => setFocusedField("subject")}
                     onBlur={() => setFocusedField(null)}
-                    className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:bg-white/15 transition-all duration-300"
+                    className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-[4px] text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:bg-white/15 transition-all duration-300"
                     placeholder="Project discussion"
                     required
                   />
                   <motion.div
-                    className="absolute inset-0 rounded-2xl border-2 border-purple-400 pointer-events-none"
-                    initial={{ opacity: 0, scale: 1.05 }}
+                    className="absolute inset-0 rounded-[4px] border-2 border-purple-400 pointer-events-none"
+                    initial={{ opacity: 0, scale: 1.02 }}
                     animate={{
                       opacity: focusedField === "subject" ? 1 : 0,
-                      scale: focusedField === "subject" ? 1 : 1.05,
+                      scale: focusedField === "subject" ? 1 : 1.02,
                     }}
                     transition={{ duration: 0.2 }}
                   />
@@ -191,7 +191,7 @@ const Contacts = () => {
 
                 <motion.div
                   className="relative"
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ scale: 1.01 }}
                   transition={{ duration: 0.2 }}
                 >
                   <textarea
@@ -202,16 +202,16 @@ const Contacts = () => {
                     onFocus={() => setFocusedField("message")}
                     onBlur={() => setFocusedField(null)}
                     rows={6}
-                    className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:bg-white/15 transition-all duration-300 resize-none"
+                    className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-[4px] text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:bg-white/15 transition-all duration-300 resize-none"
                     placeholder="Tell me about your project..."
                     required
                   ></textarea>
                   <motion.div
-                    className="absolute inset-0 rounded-2xl border-2 border-purple-400 pointer-events-none"
-                    initial={{ opacity: 0, scale: 1.05 }}
+                    className="absolute inset-0 rounded-[4px] border-2 border-purple-400 pointer-events-none"
+                    initial={{ opacity: 0, scale: 1.02 }}
                     animate={{
                       opacity: focusedField === "message" ? 1 : 0,
-                      scale: focusedField === "message" ? 1 : 1.05,
+                      scale: focusedField === "message" ? 1 : 1.02,
                     }}
                     transition={{ duration: 0.2 }}
                   />
@@ -219,9 +219,9 @@ const Contacts = () => {
 
                 <motion.button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white px-8 py-4 rounded-2xl font-semibold hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 flex items-center justify-center gap-3"
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
+                  className="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white px-8 py-4 rounded-[4px] font-semibold hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 flex items-center justify-center gap-3"
+                  whileHover={{ scale: 1.01, y: -1 }}
+                  whileTap={{ scale: 0.99 }}
                   disabled={isSubmitted}
                 >
                   {isSubmitted ? (
@@ -240,7 +240,7 @@ const Contacts = () => {
             </div>
           </motion.div>
 
-          {/* Contact Info */}
+          {/* Contact Info Cards */}
           <motion.div
             className="lg:col-span-2 space-y-8"
             initial={{ opacity: 0, x: 30 }}
@@ -248,7 +248,6 @@ const Contacts = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            {/* Contact Details */}
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-white mb-6">
                 Get in touch
@@ -257,7 +256,7 @@ const Contacts = () => {
                 <motion.a
                   key={index}
                   href={info.href}
-                  className="block bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-300 group"
+                  className="block bg-white/5 backdrop-blur-sm rounded-[4px] p-6 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-300 group"
                   whileHover={{ scale: 1.02, y: -2 }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -265,7 +264,7 @@ const Contacts = () => {
                   viewport={{ once: true }}
                 >
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-[4px] flex items-center justify-center text-white group-hover:scale-105 transition-transform duration-300">
                       <info.icon size={20} />
                     </div>
                     <div>
@@ -273,67 +272,16 @@ const Contacts = () => {
                         {info.title}
                       </h4>
                       <p className="text-gray-300 text-sm">{info.value}</p>
-                      <p className="text-gray-500 text-xs">
-                        {info.description}
-                      </p>
+                      {info.description && (
+                        <p className="text-gray-500 text-xs">
+                          {info.description}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </motion.a>
               ))}
             </div>
-
-            {/* Social Links */}
-            {/* <div>
-              <h4 className="text-lg font-semibold text-white mb-6">
-                Follow me
-              </h4>
-              <div className="space-y-4">
-                {socialLinks.map((social, index) => (
-                  <motion.a
-                    key={index}
-                    href={social.href}
-                    className="flex items-center space-x-4 bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-300 group"
-                    whileHover={{ scale: 1.02, x: 5 }}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-gray-400 group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                      <social.icon size={18} />
-                    </div>
-                    <div>
-                      <div className="text-white font-medium">
-                        {social.label}
-                      </div>
-                      <div className="text-gray-400 text-sm">
-                        {social.username}
-                      </div>
-                    </div>
-                  </motion.a>
-                ))}
-              </div>
-            </div> */}
-
-            {/* Availability Status */}
-            {/* <motion.div
-              className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-2xl p-6"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex items-center mb-3">
-                <div className="w-3 h-3 bg-green-400 rounded-full mr-3 animate-pulse"></div>
-                <span className="font-semibold text-green-300">
-                  Available for work
-                </span>
-              </div>
-              <p className="text-green-200 text-sm">
-                I'm currently available for freelance projects and full-time
-                opportunities.
-              </p>
-            </motion.div> */}
           </motion.div>
         </div>
       </div>

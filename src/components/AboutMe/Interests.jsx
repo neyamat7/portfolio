@@ -6,8 +6,8 @@ export default function DraggableInterests({ interests }) {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <div className="">
-      <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-4 border border-white/10">
+    <div>
+      <div className="bg-white/5 backdrop-blur-sm rounded-[4px] p-4 border border-white/10">
         <h3 className="text-2xl font-bold text-white mb-4">Beyond Coding</h3>
 
         <div className="flex flex-wrap gap-4 justify-center items-center h-auto min-h-[110px]">
@@ -28,12 +28,12 @@ export default function DraggableInterests({ interests }) {
                       bottom: 100,
                     }}
                     dragElastic={0.5}
-                    className={`bg-gradient-to-br ${interest.color} p-0.5 rounded-2xl cursor-grab active:cursor-grabbing`}
+                    className={`bg-gradient-to-br ${interest.color} p-0.5 rounded-[4px] cursor-grab active:cursor-grabbing`}
                     initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                   >
-                    <div className="bg-gray-900 rounded-2xl p-2 flex flex-col gap-1 justify-center items-center min-w-40 w-full">
+                    <div className="bg-gray-900 rounded-[4px] p-2 flex flex-col gap-1 justify-center items-center min-w-40 w-full">
                       <div className="text-xl">{interest.icon}</div>
                       <h4 className="text-white font-semibold text-base">
                         {interest.title}
@@ -46,7 +46,7 @@ export default function DraggableInterests({ interests }) {
                     onPointerEnter={() => setOpenIndex(null)}
                     side="top"
                     align="center"
-                    className="z-[9999] w-80 max-w-[95vw] rounded-2xl bg-white/20 backdrop-blur-2xl text-white text-sm px-6 py-5 shadow-2xl border border-white/20 animate-fadeInFloat"
+                    className="z-[9999] w-80 max-w-[95vw] rounded-[4px] bg-white/20 backdrop-blur-2xl text-white text-sm px-6 py-5 shadow-2xl border border-white/20 animate-fadeInFloat"
                     sideOffset={20}
                   >
                     <div className="text-lg font-semibold mb-2">
